@@ -23,8 +23,8 @@ export default function Filters() {
             className="mt-3 mb-2"
             >
             {categories.map((item, index) => (
-                <TouchableOpacity className={`flex flex-col items-start mr-4
-                    py-2 px-4 rounded-full 
+                <TouchableOpacity key={index} className={`flex flex-col 
+                    items-start mr-4 py-2 px-4 rounded-full 
                     ${selectedCategory === item.category ? 'bg-primary-300' : 
                     'bg-primary-100 border border-primary-200'} `} 
                     onPress={() => handleCategoryPress(item.category)}
@@ -37,7 +37,6 @@ export default function Filters() {
                     </Text>
                 </TouchableOpacity> 
             ))}
-            <Text>Filters</Text>
         </ScrollView>
     )
 }
